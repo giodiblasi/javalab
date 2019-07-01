@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Invitation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <div th:each="attendee: ${attendees}">
+    	<p th:text="${attendee.name}+'('+${attendee.age}+')'"/>
+    	<div th:each="tag: ${attendee.tags}">
+    		<p th:text="${tag}"/>
+    	</div>
+    	<br/>
+    </div>
+    <a href="/musicians">Mail to Musicians</a>
+    <br/>
+    <a href="/chefs">SMS to chefs</a>
+</body>
+</html>
